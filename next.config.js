@@ -5,6 +5,8 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 const isDev = process.env.NODE_ENV !== 'production';
+// Amplify/CodeBuild default instances are memory-constrained; parallel Next compiles OOM easily.
+const isCiBuild = process.env.CI === 'true' || Boolean(process.env.AWS_APP_ID);
 
 // Sometimes useful to disable this during development
 const ENABLE_CSP_HEADER = true;
@@ -199,9 +201,9 @@ const nextConfig = {
   },
 
   experimental: {
-    turbopackFileSystemCacheForBuild: true,
-    parallelServerCompiles: true,
-    parallelServerBuildTraces: true,
+    turbopackFileSystemCacheForBuild: !isCiBuild,
+    parallelServerCompiles: !isCiBuild,
+    parallelServerBuildTraces: !isCiBuild,
     optimizePackageImports: [
       '@hyperlane-xyz/registry',
       '@hyperlane-xyz/sdk',
