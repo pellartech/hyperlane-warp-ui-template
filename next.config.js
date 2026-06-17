@@ -204,6 +204,8 @@ const nextConfig = {
     turbopackFileSystemCacheForBuild: !isCiBuild,
     parallelServerCompiles: !isCiBuild,
     parallelServerBuildTraces: !isCiBuild,
+    // Static page collection spawns one worker per CPU; limit on Amplify (8 GiB).
+    ...(isCiBuild ? { cpus: 1 } : {}),
     optimizePackageImports: [
       '@hyperlane-xyz/registry',
       '@hyperlane-xyz/sdk',

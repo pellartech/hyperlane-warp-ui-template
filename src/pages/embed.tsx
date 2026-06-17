@@ -10,6 +10,9 @@ import { TransferTokenCard } from '../features/transfer/TransferTokenCard';
 import { TransferContext } from '../features/transfer/types';
 import { parseEmbedTheme, themeToCssVars } from '../styles/embedTheme';
 import { logger } from '../utils/logger';
+import { forceSSR } from '../utils/forceSSR';
+
+export { forceSSR as getServerSideProps };
 
 /**
  * Embeddable widget page — renders the transfer form in a minimal, chrome-less

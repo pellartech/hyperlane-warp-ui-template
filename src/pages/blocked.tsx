@@ -1,4 +1,7 @@
 import { ErrorBoundary } from '../components/errors/ErrorBoundary';
+import { forceSSR } from '../utils/forceSSR';
+
+export { forceSSR as getServerSideProps };
 
 export default function Page() {
   return (

@@ -2,6 +2,9 @@ import type { NextPage } from 'next';
 
 import { TipCard } from '../components/tip/TipCard';
 import { TransferTokenCard } from '../features/transfer/TransferTokenCard';
+import { forceSSR } from '../utils/forceSSR';
+
+export { forceSSR as getServerSideProps };
 
 const Home: NextPage = () => {
   return (
