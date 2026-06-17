@@ -1,6 +1,24 @@
-# A list of Warp Route token configs
-# These configs will be merged with the warp routes in the configured registry
-# The input here is typically the output of the Hyperlane CLI warp deploy command
+# DALE ↔ Sepolia Circle USDC warp route (USDC/dale-sepolia-circle)
 ---
-tokens: []
+tokens:
+  - addressOrDenom: "0x388593ABfc07aa3694FE6a315478708A08413c70"
+    chainName: dale
+    collateralAddressOrDenom: "0xad211597751d305d0bd64ab34b1837fe2977293e"
+    connections:
+      - token: ethereum|sepolia|0xF8a7A8b32Ae74F8E721D4c197aEb556dF93c775c
+    decimals: 6
+    name: Bridged USDC (DALE)
+    standard: EvmHypCollateralFiat
+    symbol: USDC.e
+    tokenType: collateralFiat
+  - addressOrDenom: "0xF8a7A8b32Ae74F8E721D4c197aEb556dF93c775c"
+    chainName: sepolia
+    collateralAddressOrDenom: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238"
+    connections:
+      - token: ethereum|dale|0x388593ABfc07aa3694FE6a315478708A08413c70
+    decimals: 6
+    name: USDC
+    standard: EvmHypCollateral
+    symbol: USDC
+    tokenType: collateral
 options: {}

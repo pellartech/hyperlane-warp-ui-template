@@ -1,20 +1,28 @@
-# A map of chain names to ChainMetadata
-# Chains can be defined here, in chains.json, or in chains.ts
-# Chains already in the SDK need not be included here unless you want to override some fields
-# Schema here: https://github.com/hyperlane-xyz/hyperlane-monorepo/blob/main/typescript/sdk/src/metadata/chainMetadataTypes.ts
+# DALE devnet chain metadata
 ---
-# Example using local anvil chain:
-# anvil1:
-#   chainId: 31337
-#   domainId: 31337
-#   name: anvil1
-#   protocol: ethereum
-#   rpcUrls:
-#     - http: http://127.0.0.1:8545
-# anvil2:
-#   chainId: 31338
-#   domainId: 31338
-#   name: anvil2
-#   protocol: ethereum
-#   rpcUrls:
-#     - http: http://127.0.0.1:8555
+dale:
+  blockExplorers:
+    - name: DALE Explorer
+      url: https://devnet.dalechain.dev/
+      apiUrl: https://devnet.dalechain.dev/api
+      family: blockscout
+  blocks:
+    confirmations: 5
+    estimateBlockTime: 2
+    reorgPeriod: 0
+  chainId: 16001
+  deployer:
+    name: Pellar Technology
+    url: https://pellartech.com
+  displayName: DALE
+  domainId: 16001
+  isTestnet: true
+  name: dale
+  nativeToken:
+    decimals: 18
+    name: DALE
+    symbol: DALE
+  protocol: ethereum
+  rpcUrls:
+    - http: https://rpc.devnet-1.dalechain.dev
+  logoURI: /images/chains/dale.svg
