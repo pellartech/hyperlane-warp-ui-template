@@ -11,7 +11,7 @@ import { trackEvent } from '../../features/analytics/utils';
 import { useStore } from '../../features/store';
 import { SideBarMenu } from '../../features/wallet/SideBarMenu';
 import { WalletProtocolModal } from '../../features/wallet/WalletProtocolModal';
-import { Footer } from '../nav/Footer';
+// import { Footer } from '../nav/Footer';
 import { Header } from '../nav/Header';
 
 export function AppLayout({ children }: PropsWithChildren) {
@@ -47,7 +47,7 @@ export function AppLayout({ children }: PropsWithChildren) {
         <div className="mx-auto flex max-w-screen-xl grow items-center sm:px-4">
           <main className="my-4 flex w-full flex-1 items-center justify-center">{children}</main>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
 
       <WalletProtocolModal

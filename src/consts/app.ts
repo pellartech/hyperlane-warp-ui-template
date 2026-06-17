@@ -3,7 +3,7 @@ import { Color } from '../styles/Color';
 export type UiThemeMode = 'light' | 'dark';
 
 export const APP_NAME = 'DALE Bridge';
-export const APP_DESCRIPTION = 'Bridge USDC between Sepolia and DALE';
+export const APP_DESCRIPTION = 'Bridge tokens between Sepolia and DALE';
 export const APP_URL = 'localhost:3000';
 export const BRAND_COLOR = Color.primary['500'];
 

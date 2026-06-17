@@ -37,18 +37,19 @@ module.exports = {
           900: '#332840',
           950: '#221A2D',
         },
+        // Monochrome brand palette derived from the DALE logo (black & white)
         primary: {
-          25: '#E2C4FC',
-          50: '#E8CAFF',
-          100: '#D9A4FF',
-          200: '#C97EFF',
-          300: '#B959FF',
-          400: '#AA33FF',
-          500: '#9A0DFF',
-          600: '#860FDC',
-          700: '#7211B9',
-          800: '#5E1396',
-          900: '#4A1673',
+          25: '#F2F2F2',
+          50: '#E6E6E6',
+          100: '#CCCCCC',
+          200: '#A6A6A6',
+          300: '#808080',
+          400: '#4D4D4D',
+          500: '#1A1A1A',
+          600: '#141414',
+          700: '#0F0F0F',
+          800: '#0A0A0A',
+          900: '#050505',
         },
         accent: {
           25: '#F8F0FF',
@@ -129,8 +130,9 @@ module.exports = {
         'tip-card-gradient': `radial-gradient(74.42% 40.45% at 50% 100%, ${theme('colors.primary.50')} 0%, ${theme('colors.cream.300')} 100%)`,
       }),
       boxShadow: ({ theme }) => ({
-        'accent-glow': `inset 2px 2px 13px 2px ${theme('colors.accent.100')}`,
-        // Intentionally identical to accent-glow — error is differentiated via error-gradient background, not the glow
+        // Neutral light inset highlight for the monochrome theme (was pink accent.100)
+        'accent-glow': `inset 2px 2px 13px 2px ${theme('colors.primary.100')}`,
+        // Error keeps the pink accent glow so error states stay visually distinct
         'error-glow': `inset 2px 2px 13px 2px ${theme('colors.accent.100')}`,
         card: `0px 4px 6px ${theme('colors.gray.950')}1A`,
         button: `0 4px 6px ${theme('colors.gray.950')}1A`,
