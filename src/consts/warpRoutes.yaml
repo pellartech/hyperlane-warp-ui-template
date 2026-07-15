@@ -1,9 +1,11 @@
 # DALE ↔ Sepolia Circle USDC warp route (USDC/dale-sepolia-circle)
+# DALE ↔ Solana testnet USDC warp route (USDC/dale-solanatestnet-fiat)
+# Both DALE-side routers mint/burn the canonical Circle FiatToken USDC.e (0xad21…)
 ---
 tokens:
-  - addressOrDenom: "0x388593ABfc07aa3694FE6a315478708A08413c70"
+  - addressOrDenom: '0x388593ABfc07aa3694FE6a315478708A08413c70'
     chainName: dale
-    collateralAddressOrDenom: "0xad211597751d305d0bd64ab34b1837fe2977293e"
+    collateralAddressOrDenom: '0xad211597751d305d0bd64ab34b1837fe2977293e'
     connections:
       - token: ethereum|sepolia|0xF8a7A8b32Ae74F8E721D4c197aEb556dF93c775c
     decimals: 6
@@ -11,14 +13,34 @@ tokens:
     standard: EvmHypCollateralFiat
     symbol: USDC.e
     tokenType: collateralFiat
-  - addressOrDenom: "0xF8a7A8b32Ae74F8E721D4c197aEb556dF93c775c"
+  - addressOrDenom: '0xF8a7A8b32Ae74F8E721D4c197aEb556dF93c775c'
     chainName: sepolia
-    collateralAddressOrDenom: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238"
+    collateralAddressOrDenom: '0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238'
     connections:
       - token: ethereum|dale|0x388593ABfc07aa3694FE6a315478708A08413c70
     decimals: 6
     name: USDC
     standard: EvmHypCollateral
+    symbol: USDC
+    tokenType: collateral
+  - addressOrDenom: '0x745516d68c15Ec8C1e26E78dBc381d04f4413142'
+    chainName: dale
+    collateralAddressOrDenom: '0xad211597751d305d0bd64ab34b1837fe2977293e'
+    connections:
+      - token: sealevel|solanatestnet|D964PcnrpbmMP7h1j1r9AEPEvHJc77nmJZCeX3u9DcqR
+    decimals: 6
+    name: Bridged USDC (DALE)
+    standard: EvmHypCollateralFiat
+    symbol: USDC.e
+    tokenType: collateralFiat
+  - addressOrDenom: 'D964PcnrpbmMP7h1j1r9AEPEvHJc77nmJZCeX3u9DcqR'
+    chainName: solanatestnet
+    collateralAddressOrDenom: '5JhpU4LVBzuZULCiNT2H3nBVhE9eBvW2zKBVbkycJSRL'
+    connections:
+      - token: ethereum|dale|0x745516d68c15Ec8C1e26E78dBc381d04f4413142
+    decimals: 6
+    name: USD Coin
+    standard: SealevelHypCollateral
     symbol: USDC
     tokenType: collateral
 options: {}

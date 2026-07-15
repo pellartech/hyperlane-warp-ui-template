@@ -1,5 +1,27 @@
 # DALE devnet chain metadata
 ---
+# solanatestnet metadata comes from the published registry, but the sealevel
+# token adapters require the mailbox IN chain metadata (the SDK reads
+# getChainMetadata(chain).mailbox), which registry metadata does not carry.
+solanatestnet:
+  chainId: 1399811150
+  domainId: 1399811150
+  name: solanatestnet
+  displayName: Solana Testnet
+  protocol: sealevel
+  isTestnet: true
+  mailbox: '75HBBLae3ddeneJVrZeyrDfv6vb7SMC3aCpBucSXS5aR'
+  rpcUrls:
+    - http: https://api.testnet.solana.com
+  blocks:
+    confirmations: 1
+    estimateBlockTime: 0.4
+    reorgPeriod: 0
+  nativeToken:
+    decimals: 9
+    name: Solana
+    symbol: SOL
+    denom: lamport
 dale:
   blockExplorers:
     - name: DALE Explorer
